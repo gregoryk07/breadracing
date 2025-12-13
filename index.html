@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreadRacing</title>
+    <link rel="stylesheet" href="heroselect.css">
+    <link rel="stylesheet" href="serverconnection.css">
+    <link rel="stylesheet" href="gameui.css">
+    <script src="startup.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="toast.css">
+</head>
+<body>
+    <div id="modal"></div>
+    <section id="credits">
+        <h1>Breadracing - Twórcy</h1>
+        <p>Grzegorz Krupa - Kod</p>
+        <p>Julian Macedoński - Oprawa graficzna</p>
+        <p>Jan Wrzos - dyrektor kreatywny</p>
+        <button class="rouge-button" onclick="changeMenu(0)"><span class="btn-hint" id="goto-credits-main">E</span>Menu główne</button>
+    </section>
+    <section id="heroselect">
+        <h1>BREADRACING</h1>
+        <h2>Wybierz swój Chleb</h2>
+        <section>
+            <section id="heroes">
+                <div><img src="breadflourspoiler.png" width="100" id="hero0" alt=""><span>Chleb 1</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero1" alt=""><span>Chleb 2</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero2" alt=""><span>Chleb 3</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero3" alt=""><span>Chleb 4</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero4" alt=""><span>Chleb 5</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero5" alt=""><span>Chleb 6</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero6" alt=""><span>Chleb 7</span></div>
+                <div><img src="breadflourspoiler.png" width="100" id="hero7" alt=""><span>Chleb 8</span></div>
+            </section>
+        </section>
+        <nav id="heronav">
+                <button type="button" id="heroselectprev" onclick="heroselectPrev()"><img src="assets/menu/arrowleft.png" width="100" height="100" alt=""><span>Poprzedni</span></button><button type="button" id="heroselectselect" onclick="heroselectSelect()"><img src="assets/menu/selecthero.png" width="100" height="100" alt=""><span>Wybierz</span></button><button type="button" id="heroselectnext" onclick="heroselectNext()"><img src="assets/menu/arrowright.png" width="100" height="100" alt=""><span>Następny</span></button>
+            </nav>
+            <button class="rouge-button" onclick="changeMenu(3)"><span class="btn-hint" id="goto-main-credits">E</span>Twórcy</button>
+    </section>
+    <section id="connecttoserver">
+        <div>
+        <div id="cardisplay">
+        <img src="" alt="wybrany pojazd" id="chosencar" width="100">
+        <span id="chosencarname"></span>
+        <ul id="chosencarstats">
+            <li><h4>Przyśpieszenie</h4>
+                <div class="chosencarstat" id="stat-accel"><div id="connect-stat-accelbar"></div></div>
+            </li>
+            <li><h4>Skrętność</h4>
+                <div class="chosencarstat" id="stat-steer"><div id="connect-stat-steerbar"></div></div>
+            </li>
+            <li><h4>Prędkość maksymalna</h4>
+                <div class="chosencarstat" id="stat-vmax"><div id="connect-stat-speedbar"></div></div>
+            </li>
+        </ul>
+        </div>
+        <nav id="serverconnectnav">
+            <input type="text" id="net_menu_1" name="nickname" placeholder="PSEUDONIM" autocomplete="off">
+            <div id="net_menu_2">
+            <!-- <label for="ipaddr">ADRES IP</label> -->
+            <input type="text" placeholder="IP SERWERA" name="ipaddr" id="ipaddr" value="192.168.50.228" autocomplete="off">
+            </div>
+            <div id="net_menu_3">
+            <!-- <label for="ipport">PORT</label> -->
+            <input type="text" min="0" max="65535" placeholder="PORT SERWERA" value="8080" name="ipport" id="ipport" autocomplete="off">
+            </div>
+            <button id="net_menu_4" onclick="connect()">POŁĄCZ Z SERWEREM</button>
+            <button id="net_menu_5" onclick="changeMenu(0)">WSTECZ</button>
+        </nav>
+        </div>
+    </section>
+    <section id="game">
+        <div id="playersparent"></div>
+        <div id="speedmeter"><div id="speedbar"></div></div>
+        <div id="steeringmeter"></div>
+        <div id="buttons" style="bottom: 0; right: 0;">
+            <button onclick="disconnect()">ODŁĄCZ</button>
+        </div>
+        <div id="scoreboard">
+            <h2>czasy</h2>
+            <table id="scoreboard-list">
+
+            </table>
+        </div>
+        <div id="map"></div>
+    </section>
+    <script src="toast.js"></script>
+    <script src="netcode.js"></script>
+    <script src="input.js"></script>
+    <script src="menunav.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

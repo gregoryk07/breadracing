@@ -1,0 +1,86 @@
+#connecttoserver{
+    background-color: rgba(0, 0, 0, 0.3);
+    
+    backdrop-filter: blur(10px);
+    height: 100dvh;
+}
+#connecttoserver>div{
+    
+    display: flex;
+    flex-direction: row;
+}
+#chosencar{
+    animation: 4.5s infinite rotateimg linear;
+    padding: 50px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#serverconnectnav{
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+#serverconnectnav>*{
+    flex: 1;
+    font-size: xx-large;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+#serverconnectnav>div>*{
+    flex: 1;
+    font-size: xx-large;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0 20px;
+}
+
+#serverconnectnav>div{
+    display: flex;
+    flex-direction: column;
+}
+#serverconnectnav>div>*{
+    flex: 2;
+    font-size: xx-large;
+}
+#serverconnectnav>div>label{
+    flex: 1;
+}
+input::placeholder{
+    color: lightgray;
+}
+#cardisplay{
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    width: 500px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#cardisplay>span{
+    padding: 50px;
+    margin: 0;
+    font-size: x-large;
+}
+.selectedservermenu, .selectedservermenu>input{
+    background-color: gold !important;
+    color: black !important;
+}
+input.selectedservermenu::placeholder, .selectedservermenu input::placeholder{
+    color: rgb(58, 58, 58);
+    
+}
+input:focus-visible{
+    border: none;
+    outline: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

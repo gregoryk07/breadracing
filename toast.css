@@ -1,0 +1,18 @@
+#toast-toast{
+    position: absolute;
+    z-index: 200;
+    background-color: black;
+    color: white;
+    text-align: left;
+    width: 550px;
+    padding: 10px;
+    left: -570px;
+    transition-duration: 1s;
+    top: 20dvh;
+}
+#toast-show-checkbox{
+    display: none;
+}
+#toast-show-checkbox:checked ~ #toast-toast{
+    left: 0px;
+}

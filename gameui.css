@@ -1,0 +1,80 @@
+#game{
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#playersparent{
+    width: 4192px;
+    height: 4192px;
+    background: url("mapa_light2.png");
+    background-size: 4192px 4192px;
+    image-rendering: pixelated;
+}
+
+#speedmeter{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 20vh;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.3);
+    width: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+#speedbar{
+    display: inline-block;
+    width: 100%;
+    background-color: red;
+    height: 1dvh;
+}
+
+#playerparent{
+    position: absolute;
+    height: 0 !important;
+    width: 0 !important;
+}
+.player{
+    display: inline-block;
+    transform-origin: center;
+}
+#buttons{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/* #steeringmeter{
+    position: fixed;
+    bottom: 10px;
+    right: 140px;
+    height: 100px;
+    width: 100px;
+    background: url("assets/menu/steering_wheel.png");
+    background-size: 100px 100px;
+    image-rendering: pixelated;
+} */
+#scoreboard{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    border:  yellow 2px solid;
+}
+#scoreboard-list{
+    width: 100%;
+    border-collapse: collapse;
+}
+#scoreboard-list td{
+    text-align: left;
+    padding: 5px;
+    padding-right: 10px;
+}
+#scoreboard-list td:nth-of-type(even){
+    text-align: right;
+    padding-left: 10px;
+}
+#scoreboard-list *:nth-of-type(even) tr{
+    background-color: rgba(75,75,75,0.7);
+}
