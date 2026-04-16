@@ -135,9 +135,9 @@ async function runNetworking(){
 
 	if(runFakeServer){
 		
-
-		localplayers = localplayers;
-		localscoreboard = localscoreboard;
+		r = {"status" : 1, "owner" : 0, "players" : {"posx" : posx, "posy" : posy, "rot" : rot, "speedx" : xvector, "speedy" : yvector, "hero" : selectedhero}, "scoreboard" : {"name": "FAKE", "time" : "0"}}
+		localplayers = r.players;
+		localscoreboard = r.scoreboard;
 		return
 	}
 	var addr = "http://" + net_ip + ":" + net_port;
