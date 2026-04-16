@@ -1,5 +1,7 @@
 var connected = false;
 
+var runFakeServer = false;
+
 var net_ip = "127.0.0.1";
 var net_port = "8080";
 
@@ -17,6 +19,16 @@ var disconnectTimeoutMax = 15;
 var disconnectstatus = "";
 
 async function connect(){
+	if(runFakeServer){
+		runGameLoop = true;
+		connected = true;
+			playerid = 0;
+			playerip = "127.0.0.1";
+			runNetworking();
+			changeMenu(2)
+			main();
+		return
+	}
     net_ip = document.getElementById("ipaddr").value;
     net_port = Number(document.getElementById("ipport").value);
     nickname = document.getElementById("net_menu_1").value;
@@ -88,6 +100,9 @@ async function disconnect(){
     // document.getElementById("ipport").value = "";
     // document.getElementById("net_menu_1").value = "";
 
+	if(runFakeServer){
+		return;
+	}
 
     var addr = "http://" + net_ip + ":" + net_port;
   	try {
@@ -118,6 +133,12 @@ function showDisconnectModal(){
 
 async function runNetworking(){
 
+	if(runFakeServer){
+		
+
+		localplayers = localplayers;
+		localscoreboard = localscoreboard;
+		return
 	var addr = "http://" + net_ip + ":" + net_port;
 	var updateparams = [playerid, posx, posy, rot, xvector, yvector, selectedhero]
   	try {
