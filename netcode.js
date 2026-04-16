@@ -139,6 +139,7 @@ async function runNetworking(){
 		localplayers = localplayers;
 		localscoreboard = localscoreboard;
 		return
+	}
 	var addr = "http://" + net_ip + ":" + net_port;
 	var updateparams = [playerid, posx, posy, rot, xvector, yvector, selectedhero]
   	try {
