@@ -135,7 +135,7 @@ async function runNetworking(){
 
 	if(runFakeServer){
 		
-		r = {"status" : 1, "owner" : 0, "players" : {"posx" : posx, "posy" : posy, "rot" : rot, "speedx" : xvector, "speedy" : yvector, "hero" : selectedhero}, "scoreboard" : {"name": "FAKE", "time" : "0"}}
+		r = {"status" : 1, "owner" : 0, "players" : [{"id" : 0, "ip" : "127.0.0.1", "nickname" : document.getElementById("net_menu_1").value, "posx" : posx, "posy" : posy, "rot" : rot, "speedx" : xvector, "speedy" : yvector, "hero" : selectedhero}], "scoreboard" : [{"name": "FAKE", "time" : "0"}]}
 		localplayers = r.players;
 		localscoreboard = r.scoreboard;
 		return
